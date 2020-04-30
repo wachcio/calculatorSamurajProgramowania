@@ -1,0 +1,35 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.wrapper {
+    top: 0;
+    left: 0;
+    width: 100wv;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calc {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.calc__display {
+    font-size: 3em;
+    text-align: right;
+}
+
+.calc__memory {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.memory_btn {
+    width: 16.6%;
+}
