@@ -52,6 +52,11 @@ class State {
     }
 
     addToDisplayNumber(value) {
+        // console.log(this.operation);
+        if (this.operation !== '') {
+            this.performOperation();
+            console.log('result:', this.result);
+        }
         let temp = '';
         if (value != '.') {
             if (this.isFloat == true && Number.isInteger(this.displayNumber)) {
@@ -69,6 +74,36 @@ class State {
         } else {
             alert('Przekroczona maksymalna liczba');
         }
+    }
+
+    useOperation(operation) {
+        this.operation = operation;
+        this.lastNumber = this.displayNumber;
+        console.log('last: ' + this.lastNumber);
+    }
+    performOperation() {
+        console.log('result 1:', this.result);
+
+        if (this.operation == '+') {
+            // console.log("typeof: ",typeof this.result);
+            console.log(
+                'display1: ',
+                this.displayNumber,
+                'result1: ',
+                this.result
+            );
+            this.result = this.displayNumber * this.lastNumber;
+            console.log(
+                'display: ',
+                this.displayNumber,
+                'result: ',
+                this.result
+            );
+        }
+
+        this.displayNumber = this.result;
+        this.operation = '';
+        console.log('result 2:', this.result);
     }
 }
 

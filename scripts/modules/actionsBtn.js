@@ -24,7 +24,7 @@ class ActionsBtn {
         return '+-';
     }
     plusAction(e) {
-        console.log('+');
+        state.useOperation('+');
         return '+';
     }
     minusAction(e) {
