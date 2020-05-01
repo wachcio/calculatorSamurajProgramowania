@@ -1,11 +1,11 @@
-import display from "./display.js";
+import display from './display.js';
 
 class State {
     constructor() {
         this._displayNumber = 0;
         this._result = 0;
         this._lastNumber = 0;
-        this._operation = "";
+        this._operation = '';
     }
 
     get displayNumber() {
@@ -14,7 +14,7 @@ class State {
     set displayNumber(value) {
         this._displayNumber = value;
         display.show(this._displayNumber);
-        return this._displayNumber ;
+        return this._displayNumber;
     }
     get result() {
         return this._result;
@@ -33,6 +33,24 @@ class State {
     }
     set operation(value) {
         return (this._operation = value);
+    }
+
+    deleteOneDigitDisplayNumber() {
+        if (this.displayNumber.toString().length > 1) {
+            this.displayNumber = this._displayNumber.toString().slice(0, -1);
+            console.log(this.displayNumber);
+        } else {
+            this.displayNumber = 0;
+        }
+    }
+
+    addToDisplayNumber(value) {
+        let temp = ''.concat(this._displayNumber, value);
+        if (temp.length < 11) {
+            this.displayNumber = Number(temp);
+        } else {
+            alert('Przekroczona maksymalna liczba');
+        }
     }
 }
 
