@@ -12,6 +12,7 @@ class ActionsBtn {
         this._result = document.querySelector(`[data-action="result"]`);
         this._comma = document.querySelector(`[data-action="comma"]`);
         this._back = document.querySelector(`[data-action="back"]`);
+        this._clear = document.querySelector(`[data-action="c"]`);
         this.addActions();
     }
     digitAction(e) {
@@ -53,6 +54,9 @@ class ActionsBtn {
         state.deleteOneDigitDisplayNumber();
         return '<<';
     }
+    clearAction(e){
+        state.clearState();
+    }
     addActions() {
         this._digits.forEach((element) => {
             element.addEventListener('click', this.digitAction);
@@ -69,6 +73,7 @@ class ActionsBtn {
         this._result.addEventListener('click', this.resultAction);
         this._comma.addEventListener('click', this.commaAction);
         this._back.addEventListener('click', this.backAction);
+        this._clear.addEventListener('click', this.clearAction);
     }
 }
 

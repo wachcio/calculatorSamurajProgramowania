@@ -105,6 +105,15 @@ class State {
         this.operation = '';
         console.log('result 2:', this.result);
     }
+
+    clearState(){
+        this.lastNumber = 0;
+        this.operation = "";
+        this.isFloat = false;
+        this.result = 0;
+        this.displayNumber = 0;
+
+    }
 }
 
 export default new State();
