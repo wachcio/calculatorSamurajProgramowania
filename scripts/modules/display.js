@@ -1,6 +1,6 @@
 import state from './state.js';
 
-export default class Display {
+class Display {
     constructor() {
         this._display = document.querySelector('.calc__display');
     }
@@ -18,3 +18,4 @@ export default class Display {
         this.show(state.displayNumber);
     }
 }
+export default new Display();

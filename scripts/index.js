@@ -1,7 +1,9 @@
 import state from './modules/state.js';
-import Display from './modules/display.js';
+import display from './modules/display.js';
 
-const display = new Display();
+state.displayNumber = 254;
+state.result = 354;
+console.log(state.displayNumber);
 
-state.result = 23;
-display.displayCurrentNumber();
+// state.result = 23;
+// display.displayCurrentNumber();
