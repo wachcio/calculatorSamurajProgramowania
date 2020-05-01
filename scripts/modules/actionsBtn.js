@@ -1,4 +1,5 @@
 import state from './state.js';
+import display from './display.js';
 class ActionsBtn {
     constructor() {
         this._digits = document.querySelectorAll(`[data-action="digit"]`);
@@ -8,6 +9,7 @@ class ActionsBtn {
         this._multiplication = document.querySelector(
             `[data-action="multiplication"]`
         );
+        this._result = document.querySelector(`[data-action="result"]`);
         this._divide = document.querySelector(`[data-action="divide"]`);
         this._result = document.querySelector(`[data-action="result"]`);
         this._comma = document.querySelector(`[data-action="comma"]`);
@@ -57,6 +59,10 @@ class ActionsBtn {
     clearAction(e){
         state.clearState();
     }
+    resultAction(e){
+
+        display.displayResult();
+    }
     addActions() {
         this._digits.forEach((element) => {
             element.addEventListener('click', this.digitAction);
@@ -69,6 +75,7 @@ class ActionsBtn {
             'click',
             this.multiplicationAction
         );
+        this._result.addEventListener('click', this.resultAction);
         this._divide.addEventListener('click', this.divideAction);
         this._result.addEventListener('click', this.resultAction);
         this._comma.addEventListener('click', this.commaAction);

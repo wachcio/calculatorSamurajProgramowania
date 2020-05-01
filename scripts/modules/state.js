@@ -42,6 +42,8 @@ class State {
         return (this._isFloat = value);
     }
 
+
+
     deleteOneDigitDisplayNumber() {
         if (this.displayNumber.toString().length > 1) {
             this.displayNumber = this._displayNumber.toString().slice(0, -1);
@@ -92,7 +94,7 @@ class State {
                 'result1: ',
                 this.result
             );
-            this.result = this.displayNumber * this.lastNumber;
+            this.result = this.displayNumber - this.lastNumber;
             console.log(
                 'display: ',
                 this.displayNumber,
