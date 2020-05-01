@@ -1,18 +1,23 @@
-export default class State  {
-
-    constructor(){
-        this._displayResult = 0;
+import Display from './display.js';
+const display = new Display();
+export default class State {
+    constructor() {
+        this._numberOnDisplay = 0;
         this._result = 0;
+        this._lastNumber =0;
     }
 
-    get displayResult(){
-        return this._displayResult;
+    displayUpdate() {
+        display.show(this._numberOnDisplay);
     }
 
-    set displayResult(value){
-
-        return this._displayResult = value;
+    get numberOnDisplay() {
+        return this._numberOnDisplay;
     }
 
-
+    set numberOnDisplay(value) {
+        this._numberOnDisplay = value;
+        this.displayUpdate();
+        return this._numberOnDisplay ;
+    }
 }
