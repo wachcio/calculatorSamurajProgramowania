@@ -6,6 +6,7 @@ class State {
         this._result = 0;
         this._lastNumber = 0;
         this._operation = '';
+        this._isFloat = false;
     }
 
     get displayNumber() {
@@ -34,6 +35,12 @@ class State {
     set operation(value) {
         return (this._operation = value);
     }
+    get isFloat() {
+        return this._isFloat;
+    }
+    set isFloat(value) {
+        return (this._isFloat = value);
+    }
 
     deleteOneDigitDisplayNumber() {
         if (this.displayNumber.toString().length > 1) {
@@ -45,12 +52,26 @@ class State {
     }
 
     addToDisplayNumber(value) {
-        let temp = ''.concat(this._displayNumber, value);
+        // console.log(value != '.');
+        let temp = '';
+        if (value != '.') {
+            if (this.isFloat == true) {
+                temp = ''.concat(this.displayNumber, '.', value);
+                this.isFloat = false;
+            } else {
+                temp = ''.concat(this.displayNumber, value);
+            }
+        } else {
+            temp = ''.concat(this.displayNumber, value, '0');
+            this.isFloat = true;
+            console.log('temp', temp);
+        }
         if (temp.length < 11) {
-            this.displayNumber = Number(temp);
+            this.displayNumber = parseFloat(temp);
         } else {
             alert('Przekroczona maksymalna liczba');
         }
+        console.log('displayNumber', this.displayNumber);
     }
 }
 

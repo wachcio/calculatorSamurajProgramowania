@@ -44,8 +44,9 @@ class ActionsBtn {
         return '=';
     }
     commaAction(e) {
-        console.log('.');
-        return '.';
+        state.addToDisplayNumber(".");
+        console.log(".");
+        return ".";
     }
     backAction(e) {
         console.log('<<');
