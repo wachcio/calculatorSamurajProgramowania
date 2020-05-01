@@ -3,11 +3,20 @@ import BtnActions from "./btnActions.js"
 
 const state = new State;
 
-const btnActions = new BtnActions;
 
-console.log(btnActions.digitBtn[1].dataset.digit);
+document.querySelectorAll(`[data-action="digit"]`).forEach(element => {
+    element.addEventListener('click', (e)=>{
+        console.log(e.target.dataset.digit);
+        state.addToDisplay(e.target.dataset.digit)
+        return e.target.dataset.digit;
+    })
+});
 
-state.numberOnDisplay=2;
+// console.log(btnActions.digitBtn[1].dataset.digit);
+
+// state.numberOnDisplay=2;
+
+// state.addToDisplay(3);
 
 
 

@@ -29,6 +29,7 @@ body {
 .calc__display {
     font-size: 3em;
     text-align: right;
+    background-color: rgb(235, 235, 235);
 }
 
 .calc__memory {
