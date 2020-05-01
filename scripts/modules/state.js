@@ -52,7 +52,6 @@ class State {
     }
 
     addToDisplayNumber(value) {
-        // console.log(Number.isInteger(this.displayNumber));
         let temp = '';
         if (value != '.') {
             if (this.isFloat == true && Number.isInteger(this.displayNumber)) {
@@ -64,14 +63,12 @@ class State {
         } else {
             temp = ''.concat(this.displayNumber, value, '0');
             this.isFloat = true;
-            console.log('temp', temp);
         }
         if (temp.length < 11) {
             this.displayNumber = parseFloat(temp);
         } else {
             alert('Przekroczona maksymalna liczba');
         }
-        console.log('displayNumber', this.displayNumber);
     }
 }
 
