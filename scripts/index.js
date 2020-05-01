@@ -1,5 +1,6 @@
 import state from './modules/state.js';
 import display from './modules/display.js';
+import actionsBtn from './modules/actionsBtn.js'
 
 state.displayNumber = 254;
 state.result = 354;
