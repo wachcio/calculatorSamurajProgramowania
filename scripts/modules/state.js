@@ -5,6 +5,7 @@ class State {
         this._displayNumber = 0;
         this._result = 0;
         this._lastNumber = 0;
+        this._operation = "";
     }
 
     get displayNumber() {
@@ -26,6 +27,12 @@ class State {
     }
     set lastNumber(value) {
         return (this._lastNumber = value);
+    }
+    get operation() {
+        return this._operation;
+    }
+    set operation(value) {
+        return (this._operation = value);
     }
 }
 
