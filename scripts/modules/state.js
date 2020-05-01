@@ -52,10 +52,10 @@ class State {
     }
 
     addToDisplayNumber(value) {
-        // console.log(value != '.');
+        // console.log(Number.isInteger(this.displayNumber));
         let temp = '';
         if (value != '.') {
-            if (this.isFloat == true) {
+            if (this.isFloat == true && Number.isInteger(this.displayNumber)) {
                 temp = ''.concat(this.displayNumber, '.', value);
                 this.isFloat = false;
             } else {
